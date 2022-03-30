@@ -10,53 +10,6 @@ echo ""
 sleep 3
 
 echo ""
-echo "Create Team Users and grant root privileges"
-echo "========================================================================================"
-sudo adduser --disabled-password mjc18171
-sudo usermod -aG sudo mjc18171
-cp .keys/id_ed25519.pub /home/mjc18171/.ssh
- 
-sudo adduser --disabled-password stefk
-sudo usermod -aG sudo stefk
-cp .keys/stef.pub /home/stefk/.ssh
- 
-sudo adduser --disabled-password krr74113
-sudo usermod -aG sudo krr74113
-cp .keys/kim.pub /home/krr74113/.ssh
- 
-sudo adduser --disabled-password msn60002
-sudo usermod -aG sudo msn60002
-cp .keys/martini.pub /home/msn60002/.ssh
-
-#cp authorized keys into root
-cp .keys/authorized_keys /root/.ssh
-echo ""
-
-sleep 3
-
-echo ""
-echo "Installing Apache2 Web server"
-echo "========================================================================================"
-sudo apt-get install apache2 -y
-echo "" 
-
-sleep 3
-
-echo ""
-echo "Installing MySQL"
-echo "========================================================================================"
-sudo apt-get install mysql-server -y
-# Enter password: COMP424
-mysql -u root
-echo "exit"
-
-#copy apache2 config file
-cp .apache2_files/apache2.conf /etc/apache2
-echo ""
-
-sleep 3
-
-echo ""
 echo "Installing Composer"
 echo "========================================================================================"
 sudo apt install php-cli unzip
@@ -83,7 +36,7 @@ dpkg-reconfigure -f noninteractive tzdata
 
 # create an admin account to access phpmyadmin
 # Select YES when prompted
-echo "CREATE USER 'admin'@'localhost' IDENTIFIED BY 'COMP424';"
+echo "CREATE USER 'admin'@'localhost' IDENTIFIED BY 'CIT481';"
 echo "GRANT ALL PRIVILEGES ON * . * TO 'admin'@'localhost';"
 echo "FLUSH PRIVILEGES;"
 echo "exit"
