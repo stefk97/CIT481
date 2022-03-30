@@ -10,21 +10,6 @@ echo ""
 sleep 3
 
 echo ""
-<<<<<<< HEAD
-=======
-echo "Create Team Users and grant root privileges"
-echo "========================================================================================"
-sudo adduser --disabled-password stefk
-sudo usermod -aG sudo stefk
-cp .keys/stef.pub /home/stefk/.ssh
-
-#cp authorized keys into root
-cp .keys/authorized_keys /root/.ssh
-echo ""
-
-sleep 3
-
-echo ""
 echo "Installing Apache2 Web server"
 echo "========================================================================================"
 sudo apt-get install apache2 -y
@@ -47,7 +32,6 @@ echo ""
 sleep 3
 
 echo ""
->>>>>>> 9127834c7c60bd63ffb173bf23d5aad7a8c38f8f
 echo "Installing Composer"
 echo "========================================================================================"
 sudo apt install php-cli unzip
