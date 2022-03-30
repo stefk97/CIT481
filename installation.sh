@@ -47,35 +47,6 @@ echo""
 sleep 3
 
 echo ""
-echo "Installing PHP"
-echo "========================================================================================"
-# this is install will prompt you, select apache2
-# another prompt will come up, select yes
-sudo apt-get install phpmyadmin -y
-
-echo "America/Los Angeles" > /etc/timezone
-dpkg-reconfigure -f noninteractive tzdata
-
-# create an admin account to access phpmyadmin
-# Select YES when prompted
-echo "CREATE USER 'admin'@'localhost' IDENTIFIED BY 'CIT481';"
-echo "GRANT ALL PRIVILEGES ON * . * TO 'admin'@'localhost';"
-echo "FLUSH PRIVILEGES;"
-echo "exit"
-
-# Select apache2
-mysql -u root -p
-
-#copy php apache2 config file
-cp .php_files/php.ini /etc/php/7.4/apache2
-
-sudo apt-get install php -y
-# add php files to /var/www/html unless you alias/redirect to it
-echo ""
-
-sleep 3
-
-echo ""
 echo "Enabling Modules"
 echo "========================================================================================"
 sudo a2enmod alias
