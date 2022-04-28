@@ -17,13 +17,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body{ font: 14px sans-serif; text-align: center; }
-        body{ background-color: #c8c8c8; }
-        .content {max-width: 550px; margin: auto; }
+        body{ background-color: #0c1023; }
+        .content {max-width: 550px; margin: 400px; }
     </style>
 </head>
 <body>
     <div class="content">
-        <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+        <h1 style="color:white" class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
             <p>
                 <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
                 <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
